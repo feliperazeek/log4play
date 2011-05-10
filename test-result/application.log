@@ -1,0 +1,37 @@
+10 May 2011 17:10:47,665 INFO  ~ Starting /Users/felipera/development/log4play/.
+10 May 2011 17:10:47,700 ERROR ~ 
+java.lang.ClassNotFoundException: mashup.fm.Log4PlayPlugin
+	at java.lang.ClassLoader.findClass(ClassLoader.java:359)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:307)
+	at play.classloading.ApplicationClassloader.loadClass(ApplicationClassloader.java:93)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:248)
+	at play.plugins.PluginCollection.loadPlugins(PluginCollection.java:100)
+	at play.Play.init(Play.java:293)
+	at play.test.PlayJUnitRunner.<init>(PlayJUnitRunner.java:29)
+	at org.junit.internal.builders.AnnotatedBuilder.buildRunner(AnnotatedBuilder.java:31)
+	at org.junit.internal.builders.AnnotatedBuilder.runnerForClass(AnnotatedBuilder.java:24)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:57)
+	at org.junit.internal.builders.AllDefaultPossibilitiesBuilder.runnerForClass(AllDefaultPossibilitiesBuilder.java:29)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:57)
+	at org.junit.internal.requests.ClassRequest.getRunner(ClassRequest.java:24)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.<init>(JUnit4TestReference.java:32)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestClassReference.<init>(JUnit4TestClassReference.java:25)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader.createTest(JUnit4TestLoader.java:41)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader.loadTests(JUnit4TestLoader.java:31)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:452)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+10 May 2011 17:10:48,330 WARN  ~ You're running Play! in DEV mode
+10 May 2011 17:10:49,313 INFO  ~ Connected to jdbc:h2:mem:play;MODE=MYSQL;LOCK_MODE=0
+10 May 2011 17:10:49,322 INFO  ~ Application 'log4play' is now started !
+10 May 2011 17:10:49,441 INFO  ~ Firing job to listen on execution stream
+10 May 2011 17:10:49,441 INFO  ~ Waiting on Execution Event...
+10 May 2011 17:10:49,442 INFO  ~ Received Execution Event: mashup.fm.log4play.Stats$ExecutionEvent@3d73eca6
+10 May 2011 17:10:49,443 INFO  ~ Executions: 1
+10 May 2011 17:10:49,443 INFO  ~ Execution Times: 0
+10 May 2011 17:10:49,443 INFO  ~ Waiting on Execution Event...
+10 May 2011 17:10:49,943 INFO  ~ Received Execution Event: mashup.fm.log4play.Stats$ExecutionEvent@daa0e3b
+10 May 2011 17:10:49,943 INFO  ~ Executions: 2
+10 May 2011 17:10:49,944 INFO  ~ Execution Times: 10
+10 May 2011 17:10:49,944 INFO  ~ Waiting on Execution Event...
