@@ -230,6 +230,9 @@ public class Stats<KEY> {
 	public long averageTime(KEY key) {
 		long executions = this.executions(key);
 		long times = this.executionTimes(key);
+		if (executions <= 0) {
+			return 0;
+		}
 		return times / executions;
 	}
 
