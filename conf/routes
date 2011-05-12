@@ -3,7 +3,8 @@
 # ~~~~
 
 # Home page
-GET     /                                       Application.index
+WS      /logstream                              Log4Play.WebSocket.index
+GET     /                                       Log4Play.index
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
