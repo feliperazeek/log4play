@@ -46,7 +46,7 @@ public class LoggerTestJob extends Job {
 		while (true) {
 			i++;
 			String msg = "";
-			for (int x = 0; x < 20; x++) {
+			for (int x = 0; x < 5; x++) {
 				msg = msg + "Debug Message " + i + " ";
 			}
 			Logger.debug(msg);
