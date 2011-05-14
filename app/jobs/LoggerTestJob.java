@@ -45,9 +45,13 @@ public class LoggerTestJob extends Job {
 		int i = 0;
 		while (true) {
 			i++;
-			Logger.debug("Debug Message " + i);
+			String msg = "";
+			for (int x = 0; x < 20; x++) {
+				msg = msg + "Debug Message " + i + " ";
+			}
+			Logger.debug(msg);
 			try {
-				Thread.sleep(3000);
+				Thread.sleep(5000);
 			} catch (InterruptedException e) {
 				Logger.error(ExceptionUtil.getStackTrace(e));
 			}

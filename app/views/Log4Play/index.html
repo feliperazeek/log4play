@@ -1,42 +1,28 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
-<h1>Log4Play Live Stream</h1> 
+<header>
+	<div class="inner">
+		<nav>
+			<ul>
+				<li><a href="#trace"><input type="checkbox" id="log4play_level_TRACE" value="true"> TRACE</a></li>
+				<li><a href="#debug"><input type="checkbox" id="log4play_level_DEBUG" value="true"> DEBUG</a></li>
+				<li><a href="#info"><input type="checkbox" id="log4play_level_INFO" value="true" checked> INFO</a></li>
+				<li><a href="#warn"><input type="checkbox" id="log4play_level_WARN" value="true" checked> WARN</a></li>
+				<li><a href="#error"><input type="checkbox" id="log4play_level_ERROR" value="true" checked> ERROR</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
 
-<form>
-
-<input type="checkbox" id="log4play_level_TRACE" value="true"> TRACE | 
-<input type="checkbox" id="log4play_level_DEBUG" value="true"> DEBUG |
-<input type="checkbox" id="log4play_level_INFO" value="true" checked> INFO |
-<input type="checkbox" id="log4play_level_WARN" value="true" checked> WARN |
-<input type="checkbox" id="log4play_level_ERROR" value="true" checked> ERROR |
-
-</form>
-
-<style type="text/css">
-<!--
-body, table {font-family: arial,sans-serif; font-size: x-medium;}
-th {background: #336699; color: #FFFFFF; text-align: left;}
-thead {color:green}
-tbody {color:black;height:50px}
-tfoot {color:red}
-tr.error{background: #ccc; color: red; text-align: left;}
-</style>
-
-<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
-  	<thead>
-	   	<tr>
-	      	<th>Time</th>
-	      	<th>Thread</th>
-	       	<th>Level</th>
-	      	<th>Category</th>
-	       	<th>Message</th>
-	   	</tr>
-	</thead>
-  	<tbody id="thread">
-
-  	</tbody>
-</table>
+<div align="left">
+<article>
+	<section>		
+		<div id="thread">
+		</div>
+	</section>
+</article>
+</div>
 
 <script type="text/javascript">
 
@@ -49,25 +35,17 @@ tr.error{background: #ccc; color: red; text-align: left;}
     	if ( event != null && json != null ) {
 	    	var checkLevel = document.getElementById("log4play_level_" + event.level);
 	    	if ( checkLevel != null && checkLevel.checked == true ) {
-	    		if ( event.level == "ERROR" ) {
-		 			$('#thread').append('<tr>'); 
-	    		} else {
-	    			$('#thread').append('<tr class="error">'); 
-	    		}
-		        $('#thread').append('<td>' + event.date + '</td>');
-		        $('#thread').append('<td>' + event.thread + '</td>');
-		        $('#thread').append('<td>' + event.level + '</td>');
-		        $('#thread').append('<td>' + event.category + '</td>');
-		        $('#thread').append('<td>' + event.message + '</td>');
-		        $('#thread').append('</tr>');
+	    		$('#thread').append('<div class="signature"><h3 id="waypoint-init">[' + event.level + '] [' + event.category  + '] [' + event.date + ']</h3><dl>'); 
+		        $('#thread').append('<dd><pre>' + event.message + '</pre></dd>');
+		        $('#thread').append('</dl></div>');
+		        $('#thread').scrollTo('max');
 	    	}
-    	} 
+    	}
     } 
     
     // Message received on the socket
     socket.onmessage = function(event) {
     	display(event.data);
     }
-    
 
 </script>

@@ -47,7 +47,6 @@ public abstract class LogStream {
 	 */
 	public static void publish(Log4PlayEvent event) {
 		stream.publish(event);
-
 	}
 
 }

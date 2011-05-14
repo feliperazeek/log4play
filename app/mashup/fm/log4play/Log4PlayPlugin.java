@@ -15,21 +15,19 @@ import play.mvc.Router;
  */
 public class Log4PlayPlugin extends PlayPlugin {
 
-    /**
-     * On application start.
-     */
-    @Override
-    public void onApplicationStart() {
-	PlayWebSocketLogAppender appender = new PlayWebSocketLogAppender();
-	// setting the PlayWebSocketLogAppender on the play logger
+	/**
+	 * On application start.
+	 */
+	@Override
+	public void onApplicationStart() {
+		// Add appender that will stream log messages as Log4PlayEvent instances
+		// through WebSocket (Log4Play.WebSocket.stream)
+		PlayWebSocketLogAppender appender = new PlayWebSocketLogAppender();
+		Logger.log4j.addAppender(appender);
 
-	Logger.log4j.addAppender(appender);
-	Logger.info("appender is "
-		+ Logger.log4j.getAppender("PlayWebSocketLogAppender"));
-
-	// using HTMLLayout for displaying on UI
-	Router.addRoute("GET", "/@logs", "Log4Play.index");
-	Router.addRoute("WS", "/@logs/stream", "Log4Play.WebSocket.stream");
-    }
+		// Add routes for the UI
+		Router.addRoute("GET", "/@logs", "Log4Play.index");
+		Router.addRoute("WS", "/@logs/stream", "Log4Play.WebSocket.stream");
+	}
 
 }

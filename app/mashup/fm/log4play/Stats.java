@@ -25,6 +25,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicLong;
 
 import play.Logger;
+import play.Play;
 import play.libs.F.EventStream;
 import play.libs.F.Promise;
 
@@ -45,9 +46,6 @@ public class Stats<KEY> {
 	/** The executor. */
 	protected ExecutorService executor;
 
-	/** The debug. */
-	protected boolean debug = true;
-
 	/**
 	 * Instantiates a new stats.
 	 */
@@ -65,7 +63,7 @@ public class Stats<KEY> {
 	 *            the msg
 	 */
 	protected void log(String msg) {
-		if (this.debug) {
+		if (Play.mode.equals(Play.Mode.PROD) == false) {
 			Logger.info(msg);
 		}
 	}

@@ -52,13 +52,16 @@ public class Log4PlayEvent {
 	 *            the event
 	 */
 	public Log4PlayEvent(LoggingEvent event) {
+		// Define Date Format
 		DateFormat dateFormat = SimpleDateFormat.getDateTimeInstance();
 
+		// Set Data Fields
 		this.category = event.categoryName;
 		this.thread = event.getThreadName();
 		this.date = dateFormat.format(new Date(event.getTimeStamp()));
 		this.message = event.getRenderedMessage();
 
+		// Set Log Level
 		if (event.getLevel().toInt() == Level.TRACE_INT) {
 			this.level = "TRACE";
 		}
