@@ -16,25 +16,37 @@
  * @author Felipe Oliveira (http://mashup.fm)
  * 
  */
-package mashup.fm.log4play;
+package play.modules.log4play;
 
-import org.apache.log4j.Appender;
-import org.apache.log4j.WriterAppender;
-import org.apache.log4j.spi.LoggingEvent;
+import play.libs.F.ArchivedEventStream;
+import play.libs.F.EventStream;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class PlayWebSocketLogAppender.
+ * The Class LogStream.
  */
-public class PlayWebSocketLogAppender extends WriterAppender implements Appender {
+public abstract class LogStream {
+
+	/** The stream. */
+	public static final ArchivedEventStream<Log4PlayEvent> stream = new ArchivedEventStream<Log4PlayEvent>(50);
 
 	/**
-	 * Publish log event to WebSocket Stream
+	 * Gets the stream.
 	 * 
-	 * @see org.apache.log4j.WriterAppender#append(org.apache.log4j.spi.LoggingEvent)
+	 * @return the stream
 	 */
-	@Override
-	public void append(LoggingEvent event) {
-		LogStream.publish(new Log4PlayEvent(event));
+	public static EventStream<Log4PlayEvent> getStream() {
+		return stream.eventStream();
 	}
+
+	/**
+	 * Publish.
+	 * 
+	 * @param event
+	 *            the event
+	 */
+	public static void publish(Log4PlayEvent event) {
+		stream.publish(event);
+	}
+
 }

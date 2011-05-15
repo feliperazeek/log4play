@@ -16,7 +16,7 @@
  * @author Felipe Oliveira (http://mashup.fm)
  * 
  */
-package mashup.fm.log4play;
+package play.modules.log4play;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ConcurrentHashMap;

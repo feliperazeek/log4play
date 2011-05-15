@@ -18,7 +18,6 @@
  */
 package jobs;
 
-import mashup.fm.log4play.ExceptionUtil;
 import play.Logger;
 import play.Play;
 import play.jobs.Job;
@@ -53,7 +52,7 @@ public class LoggerTestJob extends Job {
 			try {
 				Thread.sleep(5000);
 			} catch (InterruptedException e) {
-				Logger.error(ExceptionUtil.getStackTrace(e));
+				Logger.error(play.modules.log4play.ExceptionUtil.getStackTrace(e));
 			}
 		}
 	}

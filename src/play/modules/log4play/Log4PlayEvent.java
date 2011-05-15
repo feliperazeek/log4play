@@ -16,7 +16,7 @@
  * @author Felipe Oliveira (http://mashup.fm)
  * 
  */
-package mashup.fm.log4play;
+package play.modules.log4play;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

@@ -3,7 +3,7 @@
  * 
  * @author Deepthi
  */
-package mashup.fm.log4play;
+package play.modules.log4play;
 
 import play.Logger;
 import play.PlayPlugin;

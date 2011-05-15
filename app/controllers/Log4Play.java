@@ -5,9 +5,6 @@
  */
 package controllers;
 
-import mashup.fm.log4play.ExceptionUtil;
-import mashup.fm.log4play.Log4PlayEvent;
-import mashup.fm.log4play.LogStream;
 import play.Logger;
 import play.libs.F.EventStream;
 import play.libs.F.Promise;
@@ -36,15 +33,15 @@ public class Log4Play extends Controller {
 		 * Index.
 		 */
 		public static void index() {
-			EventStream<Log4PlayEvent> loggingStream = LogStream.getStream();
+			EventStream<play.modules.log4play.Log4PlayEvent> loggingStream = play.modules.log4play.LogStream.getStream();
 			while (inbound.isOpen()) {
 				try {
-					Promise<Log4PlayEvent> promise = loggingStream.nextEvent();
-					Log4PlayEvent event = await(promise);
+					Promise<play.modules.log4play.Log4PlayEvent> promise = loggingStream.nextEvent();
+					play.modules.log4play.Log4PlayEvent event = await(promise);
 					outbound.sendJson(event);
 
 				} catch (Throwable t) {
-					Logger.error(ExceptionUtil.getStackTrace(t));
+					Logger.error(play.modules.log4play.ExceptionUtil.getStackTrace(t));
 				}
 			}
 		}

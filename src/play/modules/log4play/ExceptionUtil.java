@@ -3,7 +3,7 @@
  * 
  * @author Felipe
  */
-package mashup.fm.log4play;
+package play.modules.log4play;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
