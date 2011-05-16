@@ -18,28 +18,45 @@
 <div align="left">
 <article>
 	<br><br><br><br>
-	<section>		
-		<div id="thread">
-		</div>
+	<section>	
+		<ul>
+			<div id="items" data-bind="html: details"></div>
+		</ul>
 	</section>
 </article>
 </div>
 
+	<script id="itemsTemplate" type="text/x-jquery-tmpl">
+		<ul>
+			{{each items}}
+				<div class="signature"><h3 id="waypoint-init">[${level}] [${category}] [${date}]</h3><dl>
+				<dd><pre>${message}</pre></dd>
+				</dl></div>
+			{{/each}}
+		</ul>
+	</script>
+
 <script type="text/javascript">
+
+	var viewModel = {};
+	viewModel.details = ko.observable();
+	ko.applyBindings(viewModel);
+	viewModel.details("Log Events will start showing up here...");
 
     // Create a socket
     var socket = new WebSocket('@@{Log4Play.WebSocket.index()}');
     
     // Display a message
+    var data = "";
     var display = function(json) {
-    	var event = eval('(' + json + ')');
+		var event = JSON.parse(json);
     	if ( event != null && json != null ) {
 	    	var checkLevel = document.getElementById("log4play_level_" + event.level);
 	    	if ( checkLevel != null && checkLevel.checked == true ) {
-	    		$('#thread').append('<div class="signature"><h3 id="waypoint-init">[' + event.level + '] [' + event.category  + '] [' + event.date + ']</h3><dl>'); 
-		        $('#thread').append('<dd><pre>' + event.message + '</pre></dd>');
-		        $('#thread').append('</dl></div>');
-		        $('#thread').scrollTo('max');
+	    		var item = '<div class="signature"><h3 id="waypoint-init">[' + event.level + '] [' + event.category  + '] [' + event.date + ']</h3><dl>';
+	    		item = item + '<dd><pre>' + event.message + '</pre></dd></dl></div>';
+	    		data = item + data;
+	    		viewModel.details(data);
 	    	}
     	}
     } 
