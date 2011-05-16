@@ -1,10 +1,3 @@
 # Routes
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
-
-# Home page
-#WS      /logstream                              log4play.Log4Play.WebSocket.index
-#GET     /                                       log4play.Log4Play.index
-
-# Map static resources from the /app/public folder to the /public path
-#GET     /public_log4play/                      staticDir:public_log4play
