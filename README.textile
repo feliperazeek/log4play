@@ -21,7 +21,7 @@ h3. 2) Installation
 Under dependencies.yml:
 
 require:
-    - play -> log4play 0.0.1
+    - play -> log4play 0.2
 
 
 
@@ -41,7 +41,7 @@ The source code is available on Github at https://github.com/feliperazeek/log4pl
 h3. 5) Changelog
 
 May 13th 2011 - Version 0.0.1: First Release.
-
+May 15th 2011 - Version 0.2:   Code Cleanup
 
 
 h3. 6) Roadmap
