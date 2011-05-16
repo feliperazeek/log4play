@@ -26,8 +26,9 @@ public class Log4PlayPlugin extends PlayPlugin {
 		Logger.log4j.addAppender(appender);
 
 		// Add routes for the UI
-		Router.addRoute("GET", "/@logs", "Log4Play.index");
-		Router.addRoute("WS", "/@logs/stream", "Log4Play.WebSocket.stream");
+		Router.addRoute("WS", "/logstream", "log4play.Log4Play.WebSocket.index");
+		Router.addRoute("GET", "/@logs", "log4play.Log4Play.index");
+		Router.addRoute("GET", "/public_log4play/", "staticDir:public_log4play");
 	}
 
 }
