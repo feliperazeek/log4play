@@ -1,0 +1,5 @@
+# Default log4play messages
+# You can specialize this file for each language.
+# For exemple, for french create a messages.fr file
+
+#log4play.name=log4play

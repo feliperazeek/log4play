@@ -1,0 +1,5 @@
+# Application dependencies
+
+require:
+    - play
+    - play -> log4play 0.0.1 

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>#{get 'title' /}</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" media="screen" href="@{'/public_log4play/stylesheets/style.css'}">
+        #{get 'moreStyles' /}
+        <link rel="shortcut icon" type="image/png" href="@{'/public_log4play/images/favicon.png'}">
+        <script src="@{'/public_log4play/javascripts/jquery-1.5.2.min.js'}" type="text/javascript" charset="utf-8"></script>
+        <script src="@{'/public_log4play/javascripts/modernizr.custom.js'}" type="text/javascript" charset="utf-8"></script>
+        <script src="@{'/public_log4play/javascripts/jquery.scrollTo-min.js'}" type="text/javascript" charset="utf-8"></script>
+        <script src="@{'/public_log4play/javascripts/jquery.tmpl.js'}" type="text/javascript" charset="utf-8"></script>
+        <script src="@{'/public_log4play/javascripts/knockout-1.2.0.js'}" type="text/javascript" charset="utf-8"></script>
+        #{get 'moreScripts' /}
+    </head>
+    <body>
+        #{doLayout /}
+    </body>
+</html>

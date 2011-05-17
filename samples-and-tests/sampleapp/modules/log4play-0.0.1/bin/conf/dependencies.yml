@@ -1,0 +1,4 @@
+self: play -> log4play 0.0.1
+
+require:
+    - play

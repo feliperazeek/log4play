@@ -1,0 +1,49 @@
+h1. Play! Framework Log4Play Module
+
+h2. Felipe Oliveira & Deepthi Rallabandi
+http://playframework.info
+http://geeks.aretotally.in
+http://mashup.fm
+http://twitter.com/_felipera
+
+
+
+h3. 1) Introduction
+
+Log4Play is a module that provides a log4j appender which publishes log entries to an EventStream. 
+The module also provides an user interface which uses a WebSocket creating a live stream of log messages.
+You can use this user interface to look at the logs of your application without needing to login to the actual box.
+
+
+
+h3. 2) Installation
+
+Under dependencies.yml:
+
+require:
+    - play -> log4play 0.0.1
+
+
+
+h3. 3) Live Demo
+
+A live demo is available at http://log4play.mashup.fm:9030/@logs. 
+As soon as you enable the module on your application you should have the same UI available as well under /@logs.
+
+
+
+h3. 4) Source Code
+
+The source code is available on Github at https://github.com/feliperazeek/log4play.
+
+
+
+h3. 5) Changelog
+
+May 13th 2011 - Version 0.0.1: First Release.
+
+
+
+h3. 6) Roadmap
+
+* Extend the UI to listen on multiple WebSockets to allow to receive messages from a whole cluster.
