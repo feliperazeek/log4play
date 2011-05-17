@@ -1,6 +1,6 @@
 h1. Play! Framework Log4Play Module
 
-h2. Felipe Oliveira & Deepthi Rallabandi
+Felipe Oliveira & Deepthi Rallabandi
 http://playframework.info
 http://geeks.aretotally.in
 http://mashup.fm
@@ -21,7 +21,7 @@ h3. 2) Installation
 Under dependencies.yml:
 
 require:
-    - play -> log4play 0.0.1
+    - play -> log4play 0.0.2
 
 
 
@@ -41,9 +41,33 @@ The source code is available on Github at https://github.com/feliperazeek/log4pl
 h3. 5) Changelog
 
 May 13th 2011 - Version 0.0.1: First Release.
+May 17th 2011 - Version 0.0.2: BetterLogs Integration. Firefox 4 Info provided by Diogenes Buarque.
 
 
 
-h3. 6) Roadmap
+h3. 6) Misc
+
+Thank you Diogenes Buarque for the following (Boa Diogenes - Valeu!):
+"For those who want to use the awesome log4play in firefox 4, you must enable the use of websockets. 
+http://wiki.mibbit.com/index.php/Websocket"
+
+
+
+h3. 7) Implementation
+
+For more details regarding the implementation of this module please go to http://geeks.aretotally.in/log4play-log4j-ui-mashed-up-with-play-framework-knockout-js-and-websockets.
+
+
+
+h3. 8) BetterLogs Integration
+
+Log4Play integrates with BetterLogs module (http://www.playframework.org/modules/betterlogs), great module created by Stephane Godbillon. This is how Stephane defines her creation:
+"This very simple module enhances the Play! Framework logs to bring some missing information such as the class name, the method name where the log has been called, its signature, the file name and the line."
+
+
+
+h3. 8) Roadmap
 
 * Extend the UI to listen on multiple WebSockets to allow to receive messages from a whole cluster.
+* Play/Pause Functions
+* Integrate with module BetterLogs
