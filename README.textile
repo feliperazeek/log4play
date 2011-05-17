@@ -21,7 +21,11 @@ h3. 2) Installation
 Under dependencies.yml:
 
 require:
+<<<<<<< HEAD
     - play -> log4play 0.0.2
+=======
+    - play -> log4play 0.2
+>>>>>>> 71ba641c85654f72f319e359d48f499b8c25cc48
 
 
 
@@ -41,8 +45,12 @@ The source code is available on Github at https://github.com/feliperazeek/log4pl
 h3. 5) Changelog
 
 May 13th 2011 - Version 0.0.1: First Release.
+<<<<<<< HEAD
 May 17th 2011 - Version 0.0.2: BetterLogs Integration. Firefox 4 Info provided by Diogenes Buarque.
 
+=======
+May 15th 2011 - Version 0.2:   Code Cleanup
+>>>>>>> 71ba641c85654f72f319e359d48f499b8c25cc48
 
 
 h3. 6) Misc

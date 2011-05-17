@@ -1,4 +1,4 @@
-#{extends 'main.html' /}
+#{extends 'log4play/main.html' /}
 #{set title:'Home' /}
 
 <header>
@@ -44,7 +44,7 @@
 	viewModel.details("Log Events will start showing up here...");
 
     // Create a socket
-    var socket = new WebSocket('@@{Log4Play.WebSocket.index()}');
+    var socket = new WebSocket('@@{log4play.Log4Play.WebSocket.index()}');
     
     // Display a message
     var data = "";
