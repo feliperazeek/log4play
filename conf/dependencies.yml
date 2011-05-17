@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-self: play -> log4play 0.0.2
-=======
-self: play -> log4play 0.2
->>>>>>> 71ba641c85654f72f319e359d48f499b8c25cc48
+self: play -> log4play 0.3
 
 require:
     - play
