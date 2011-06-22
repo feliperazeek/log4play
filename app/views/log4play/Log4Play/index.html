@@ -46,9 +46,18 @@
     // Create a socket
     var socket = new WebSocket('@@{log4play.Log4Play.WebSocket.index()}');
     
+    // Define max number of messages
+    var max = 1000;
+    var count = 0;
+    
     // Display a message
     var data = "";
     var display = function(json) {
+    	count++;
+    	if (count >= max) {
+    		count = 1;
+    		data = "";
+    	}
 		var event = JSON.parse(json);
     	if ( event != null && json != null ) {
 	    	var checkLevel = document.getElementById("log4play_level_" + event.level);
