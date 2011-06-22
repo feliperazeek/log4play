@@ -20,6 +20,13 @@ public class Log4PlayPlugin extends PlayPlugin {
 	 */
 	@Override
 	public void onApplicationStart() {
+		// Check Disabled Flag
+		boolean disabled = "true".equals(play.Play.configuration.getProperty("log4play.disabled"));
+		if ( disabled ) {
+			Logger.warn("Log4Play is currently disabled, if you would like to enable it just change configuration property 'log4play.disabled'.");
+			return;
+		}
+		
 		// Add appender that will stream log messages as Log4PlayEvent instances
 		// through WebSocket (Log4Play.WebSocket.stream)
 		PlayWebSocketLogAppender appender = new PlayWebSocketLogAppender();

@@ -13,6 +13,8 @@ h3. 1) Introduction
 Log4Play is a module that provides a log4j appender which publishes log entries to an EventStream. 
 The module also provides an user interface which uses a WebSocket creating a live stream of log messages.
 You can use this user interface to look at the logs of your application without needing to login to the actual box.
+If you would like to turn off log4play globally or on a specific mode (production for example) then just define a configuration property 'log4play.disabled=true'.
+Log4Play comes bundled with BetterLogs so you can also turn that off by adding 'betterlogs.disabled=true' to your configuration (conf/application.conf).
 
 
 
@@ -21,7 +23,7 @@ h3. 2) Installation
 Under dependencies.yml:
 
 require:
-    - play -> log4play 0.3
+    - play -> log4play 0.4
 
 
 
@@ -40,9 +42,10 @@ The source code is available on Github at https://github.com/feliperazeek/log4pl
 
 h3. 5) Changelog
 
-May 13th 2011 - Version 0.0.1: 	First Release.
-May 15th 2011 - Version 0.2:   	Code Cleanup.
-May 17th 2011 - Version 0.3: 	BetterLogs Integration. Firefox 4 Info provided by Diogenes Buarque.
+May 13th 2011 - Version 0.1: First Release.
+May 15th 2011 - Version 0.2: Code Cleanup.
+May 17th 2011 - Version 0.3: BetterLogs Integration. Firefox 4 Info provided by Diogenes Buarque.
+Jun 22nd 2011 - Version 0.4: Adding log4play.disabled configuration option, adding max number of log entries in the UI		
 
 
 h3. 6) Misc
