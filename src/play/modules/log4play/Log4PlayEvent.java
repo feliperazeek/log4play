@@ -60,6 +60,7 @@ public class Log4PlayEvent {
 		this.thread = event.getThreadName();
 		this.date = dateFormat.format(new Date(event.getTimeStamp()));
 		this.message = event.getRenderedMessage();
+		this.message = this.message.replaceAll("\u003c", "&lt;").replaceAll("\u003e", "&gt;");
 
 		// Set Log Level
 		if (event.getLevel().toInt() == Level.TRACE_INT) {
