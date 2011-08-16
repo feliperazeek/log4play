@@ -1,4 +1,4 @@
-self: play -> log4play 0.4
+self: play -> log4play 0.5
 
 require:
     - play
